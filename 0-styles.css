@@ -150,6 +150,7 @@ header .menu-open-button {
     justify-content: center;
     align-items: flex-start;
     width: 20px;
+    margin-left: 21px;
 }
 
 header .menu-line {
@@ -215,21 +216,30 @@ header .menu-line-1, .menu-line-3 {
 
     .nav-bar {
 	flex-direction: column;
-	align-items: flex-start;
+	align-items: normal;
 	justify-content: normal;
+	display: flex;
     }
 
     .mobile-nav {
 	display: flex;
+	flex-wrap: wrap;
     }
 
     .nav-bar .logo {
-	flex-grow: 1;
+	width: calc(100% - 41.5px);
+	text-align: center;
+    }
+
+    .nav-bar .logo img {
+	position: relative;
+	left: -20.5px;
     }
 
     .nav-bar ul {
 	flex-direction: column;
 	margin: 0;
+	align-items: center;
     }
 
     .nav-bar li {
@@ -237,11 +247,17 @@ header .menu-line-1, .menu-line-3 {
     }
 
     header nav {
+	flex-basis: 100%;
+	overflow: hidden;
 	max-height: 0;
 	transition: max-height .2s ease-out;
     }
 
-    .menu-open:checked ~ header nav {
+    .menu-open:checked ~ nav {
+	 max-height: none;
+    }
+
+    .mobile-nav .menu-open:checked ~ header nav {
 	max-height: auto;
     }
 
