@@ -1,8 +1,7 @@
 /* SUMMARY
 1. GLOBAL
-2. LAYOUT
-3. SECTION
-4. CARD
+2. HEADER AND HERO SECTION
+(last) RESPONSIVE DESIGN
 */
 
 
@@ -38,6 +37,7 @@
     --font-weight-base: 400;
     --font-size-base: 16px;
     --line-height-base: 26px;
+    --max-width-base: 1000px;
 }
 
 /* Base
@@ -94,6 +94,17 @@ a:hover, a:active {
     color: var(--accent-red-color);
 }
 
+.container {
+    max-width: var(--max-width-base);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*** 1. HEADER AND HERO SECTION ***/
+
+/* background image
+    ============================= */
+
 .page-top {
     background-image: url("./images/headphones_hero_1.jpg");
     background-repeat: no-repeat;
@@ -101,6 +112,9 @@ a:hover, a:active {
     background-position: center center;
     height: 800px;
 }
+
+/* nav bar
+    ============================= */
 
 .nav-bar {
     display: flex;
@@ -115,12 +129,63 @@ a:hover, a:active {
 }
 
 .nav-bar li {
-    margin-left: 30px;
+    padding-right: 30px;
 }
 
 .logo img {
     height: 32px;
 }
+
+/* mobile header menu
+    ============================= */
+
+header .menu-open {
+    display: none;
+}
+
+header .menu-open-button {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 20px;
+}
+
+header .menu-line {
+    display: block;
+    height: 3px;
+    background-color: var(--light-text-color);
+}
+
+header .menu-line-2 {
+    margin: 3px 0;
+    width: 66%;
+}
+
+header .menu-line-1, .menu-line-3 {
+    width: 100%;
+}
+
+.menu-open:checked ~ .menu-open-button .menu-line-2 {
+    display: none;
+}
+
+.menu-open:checked ~ .menu-open-button .menu-line-1 {
+    transform: rotate(45deg);
+    margin-bottom: -3px;
+}
+
+.menu-open:checked ~ .menu-open-button .menu-line-3 {
+    transform: rotate(-45deg);
+}
+
+.menu-open:checked ~ .navbar {
+    max-height: auto;
+}
+
+/* hero layout
+    ============================= */
 
 .hero {
     text-align: center;
@@ -139,4 +204,45 @@ a:hover, a:active {
     margin: 5px 0 0 0;
     font-family: var(--font-family-bold);
     font-weight: 700;
+}
+
+/*** X. RESPONSIVE DESIGN ***/
+
+@media (max-width: 767px) {
+
+/* nav bar
+    ============================= */
+
+    .nav-bar {
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: normal;
+    }
+
+    .mobile-nav {
+	display: flex;
+    }
+
+    .nav-bar .logo {
+	flex-grow: 1;
+    }
+
+    .nav-bar ul {
+	flex-direction: column;
+	margin: 0;
+    }
+
+    .nav-bar li {
+	margin-top: 20px;
+    }
+
+    header nav {
+	max-height: 0;
+	transition: max-height .2s ease-out;
+    }
+
+    .menu-open:checked ~ header nav {
+	max-height: auto;
+    }
+
 }
