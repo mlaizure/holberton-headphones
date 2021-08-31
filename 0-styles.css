@@ -155,7 +155,7 @@ header .menu-open-button {
 
 header .menu-line {
     display: block;
-    height: 3px;
+    height: 2px;
     background-color: var(--light-text-color);
 }
 
@@ -174,15 +174,11 @@ header .menu-line-1, .menu-line-3 {
 
 .menu-open:checked ~ .menu-open-button .menu-line-1 {
     transform: rotate(45deg);
-    margin-bottom: -3px;
+    margin-bottom: -2px;
 }
 
 .menu-open:checked ~ .menu-open-button .menu-line-3 {
     transform: rotate(-45deg);
-}
-
-.menu-open:checked ~ .navbar {
-    max-height: auto;
 }
 
 /* hero layout
@@ -261,11 +257,7 @@ header .menu-line-1, .menu-line-3 {
     }
 
     .menu-open:checked ~ nav {
-	 max-height: none;
-    }
-
-    .nav-bar .menu-open:checked ~ header nav {
-	max-height: auto;
+	 max-height: 100%;
     }
 
     /* hero layout
