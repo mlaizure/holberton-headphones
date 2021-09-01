@@ -14,6 +14,14 @@
     <!-- <link rel="stylesheet" href="holberton-fonts.css"> -->
   </head>
   <body>
+    <!-- Skip links -->
+    <nav aria-label="Skip links">
+      <ul class="off-screen">
+	<li><a href="#a11y-primary-nav" class="skip-link">Skip to primary navigation</a></li>
+	<li><a href="#a11y-main-content" class="skip-link">Skip to main content</a></li>
+	<li><a href="#a11y-social-links" class="skip-link">Skip to social links</a></li>
+      </ul>
+    </nav>
     <!-- Header and hero section-->
     <header class="page-top">
       <div class="nav-bar">
@@ -28,7 +36,7 @@
 	    <img src="images/logo_headphones.png" alt="Headphones logo">
 	  </a>
 	</div>
-	<nav>
+	<nav id="a11y-primary-nav">
 	  <ul>
 	    <li><a href="#what_we_do">what we do</a></li>
 	    <li><a href="#our_results">our results</a></li>
@@ -38,7 +46,7 @@
       </div>
       <!-- Hero section -->
       <section class="hero container">
-	<h1>Lorem ipsum dolor sit amet lorem ipsum</h1>
+	<h1 id="a11y-main-content">Lorem ipsum dolor sit amet lorem ipsum</h1>
 	<p class="strong">Lorem ipsum dolor sit amet lorem ipsum dolor sit</p>
 	<a href="#" class="button">CALL TO ACTION</a>
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
@@ -48,7 +56,7 @@
     <main>
       <!-- What We Do section -->
       <section class="wwd container">
-	<h1>What we do...</h1>
+	<h1 id="what_we_do">What we do...</h1>
 	<p class="paragraph">
 	  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 	</p>
@@ -78,7 +86,7 @@
       <!-- Our Results section -->
       <section class="results">
 	<div class="container">
-	  <h1>Our results speak for themselves</h1>
+	  <h1 id="our_results">Our results speak for themselves</h1>
 	  <p class="para">
 	    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 	  </p>
@@ -104,7 +112,7 @@
       </section>
       <!-- Contact Us section -->
       <section class="contact container">
-        <h1>Contact us</h1>
+        <h1 id="contact_us">Contact us</h1>
 	<form action="#" method="post">
 	  <div class="contact-form">
 	    <fieldset>
@@ -129,7 +137,7 @@
 	    <img src="images/logo_headphones.png" alt="Headphones logo">
 	  </a>
 	</div>
-	<div class="social-icons">
+	<div id="a11y-social-links" class="social-icons">
 	  <a href="https://www.facebook.com/HolbertonSchool/">
 	    <i class="holberton_school-icon-ic_facebook"></i>
 	  </a>
