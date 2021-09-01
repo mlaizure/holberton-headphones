@@ -1,6 +1,9 @@
+@import "holberton-fonts.css";
+
 /* SUMMARY
 1. GLOBAL
 2. HEADER AND HERO SECTION
+3. WHAT WE DO SECTION
 (last) RESPONSIVE DESIGN
 */
 
@@ -205,7 +208,75 @@ header .menu-line-1, .menu-line-3 {
 }
 
 
+/*** 3. WHAT WE DO SECTION ***/
+
+/* header and paragraph
+    ============================= */
+
+.wwd h1 {
+    text-align: center;
+    margin-top: 110px;
+}
+
+.wwd .paragraph {
+    text-align: center;
+    margin-top: 40px;
+    margin-left: calc(50% - 20em);
+    margin-bottom: 97px;
+    width: 40em;
+}
+
+/* icons and text
+    ============================= */
+
+.holberton_school-icon-ic_sound, .holberton_school-icon-ic_video,
+.holberton_school-icon-ic_music, .holberton_school-icon-ic_hearing {
+    color: var(--accent-red-color);
+    font-size: 95px;
+}
+
+.wwd .strong {
+    font-family: var(--font-family-bold);
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.wwd .icon-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.wwd .icon-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 32.5px;
+    margin-right: 32.5px;
+    margin-bottom: 90px;
+    width: 185px;
+}
+
+.wwd .icon-text .wrap {
+    font-size: 14px;
+    text-align: center;
+}
+
+
 /*** X. RESPONSIVE DESIGN ***/
+
+@media (min-width: 500px) and (max-width: 999px) {
+
+/* icons and text
+    ============================= */
+
+    .wwd .icon-row {
+	width: calc(2 * 250px);
+	margin-left: auto;
+	margin-right: auto;
+    }
+}
 
 @media (max-width: 767px) {
 
@@ -274,5 +345,15 @@ header .menu-line-1, .menu-line-3 {
 
     .hero .strong {
 	padding: 0 10%;
+    }
+
+    /* wwd paragraph
+    ============================= */
+
+    .wwd .paragraph {
+	width: 90%;
+	margin: 0 5%;
+	padding-top: 40px;
+	padding-bottom: 110px;
     }
 }
