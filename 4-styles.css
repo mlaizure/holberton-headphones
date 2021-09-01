@@ -6,7 +6,8 @@
 3. WHAT WE DO SECTION
 4. OUR RESULTS SECTION
 5. CONTACT US SECTION
-(last) RESPONSIVE DESIGN
+6. FOOTER
+7. RESPONSIVE DESIGN
 */
 
 
@@ -383,7 +384,56 @@ header .menu-line-1, .menu-line-3 {
 }
 
 
-/*** X. RESPONSIVE DESIGN ***/
+/*** 6. FOOTER ***/
+
+footer {
+    background: var(--dark-text-color);
+    color: var(--light-text-color);
+}
+
+footer .footer-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 92px;
+    margin-bottom: 71px;
+}
+
+footer .social-icons {
+    display: flex;
+    width: 130px;
+    height: 30px;
+    justify-content: space-between;
+}
+
+footer .holberton_school-icon-ic_facebook,
+footer .holberton_school-icon-ic_twitter,
+footer .holberton_school-icon-ic_instagram {
+    font-size: 30px;
+}
+
+footer p {
+    font-size: 12px;
+    padding-bottom: 35px;
+    text-align: center;
+}
+
+
+/*** 7. RESPONSIVE DESIGN ***/
+
+@media (max-width: 375px) {
+
+    footer .footer-links {
+	width: 162px;
+	margin: 0 auto;
+	padding-top: 48px;
+    }
+
+    footer .social-icons {
+	margin: 45px 0;
+    }
+}
 
 @media (min-width: 500px) and (max-width: 999px) {
 
