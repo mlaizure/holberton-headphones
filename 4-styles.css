@@ -117,19 +117,21 @@ a:hover, a:active {
 .skip-link {
     background: var(--dark-text-color);
     color: var(--light-text-color);
-    left: 0;
     padding: 0.7rem;
-    position: fixed;
     opacity: 0;
     top: 0;
+    left: 0;
     z-index: 10;
     tranform: translateY(-1rem);
     transition: transform .2s ease-in-out, opacity .2s ease-in-out;
+    height: 0;
 }
 
 .skip-link:focus {
     opacity: 1;
     transform: translateY(0);
+    height: auto;
+    position: fixed;
 }
 
 
