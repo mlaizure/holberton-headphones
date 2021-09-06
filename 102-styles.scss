@@ -1,0 +1,609 @@
+@import "holberton-fonts.css";
+
+/* SUMMARY
+1. GLOBAL
+2. HEADER AND HERO SECTION
+3. WHAT WE DO SECTION
+4. OUR RESULTS SECTION
+5. CONTACT US SECTION
+6. FOOTER
+7. RESPONSIVE DESIGN
+*/
+
+
+/*** 1. GLOBAL ***/
+
+/* Reset / Normalize
+  ============================= */
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
+
+/* Font imports
+  ============================= */
+
+@font-face {
+    font-family: SourceSansPro;
+    src: url("./fonts/source-sans-pro/SourceSansPro-Regular.otf");
+}
+
+@font-face {
+    font-family: SourceSansPro-Bold;
+    src: url("./fonts/source-sans-pro/SourceSansPro-Bold.otf");
+}
+
+/* Variables
+  ============================= */
+
+:root {
+    --light-text-color: white;
+    --dark-text-color: #071629;
+    --accent-red-color: #FF6565;
+    --font-family-base: 'SourceSansPro';
+    --font-family-bold: 'SourceSansPro-Bold';
+    --font-weight-base: 400;
+    --font-size-base: 16px;
+    --line-height-base: 26px;
+    --max-width-base: 1000px;
+}
+
+/* Base
+    ============================= */
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family-base);
+    font-weight: var(--font-weight-base);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-bold);
+}
+
+.button {
+    display: inline-block;
+    cursor: pointer;
+    background-color: var(--accent-red-color);
+    color: var(--light-text-color);
+    font-family: var(--font-family-bold);
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    padding: calc(22px - 13px) 0;
+    margin-top: 40px;
+    margin-bottom: 65px;
+    width: 162px;
+    border-radius: 25px;
+    filter: drop-shadow(0px 2px 20px rgba(0, 0, 0, 0.5));
+}
+
+.button:hover, .button:active {
+    color: var(--light-text-color);
+    opacity: 0.9;
+}
+
+a {
+    color: var(--light-text-color);
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    color: var(--accent-red-color);
+}
+
+.container {
+    max-width: var(--max-width-base);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Skip links
+    ============================= */
+
+.off-screen {
+    left: -100vw;
+    position: absolute;
+}
+
+.skip-link {
+    background: var(--dark-text-color);
+    color: var(--light-text-color);
+    padding: 0.7rem;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transform: translateY(-1rem);
+    transition: transform .2s ease-in-out, opacity .2s ease-in-out;
+    height: 0;
+}
+
+.skip-link:focus {
+    opacity: 1;
+    transform: translateY(0);
+    height: auto;
+    position: fixed;
+}
+
+
+/*** 2. HEADER AND HERO SECTION ***/
+
+/* background image
+    ============================= */
+
+.page-top {
+    background-image: url("./images/headphones_hero_1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 800px;
+}
+
+/* nav bar
+    ============================= */
+
+.nav-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.nav-bar ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav-bar li {
+    padding-right: 30px;
+}
+
+.logo img {
+    height: 32px;
+}
+
+/* mobile header menu
+    ============================= */
+
+header .menu-open {
+    display: none;
+}
+
+header .menu-open-button {
+    cursor: pointer;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 20px;
+    margin-left: 21px;
+}
+
+header .menu-line {
+    display: block;
+    height: 2px;
+    background-color: var(--light-text-color);
+}
+
+header .menu-line-2 {
+    margin: 3px 0;
+    width: 66%;
+}
+
+header .menu-line-1, .menu-line-3 {
+    width: 100%;
+}
+
+.menu-open:checked ~ .menu-open-button .menu-line-2 {
+    display: none;
+}
+
+.menu-open:checked ~ .menu-open-button .menu-line-1 {
+    transform: rotate(45deg);
+    margin-bottom: -2px;
+}
+
+.menu-open:checked ~ .menu-open-button .menu-line-3 {
+    transform: rotate(-45deg);
+}
+
+/* hero layout
+    ============================= */
+
+.hero {
+    text-align: center;
+    width: 40em;
+    padding-top: 312px;
+    padding-bottom: 115px;
+    margin-left: calc(50% - 20em);
+    color: var(--light-text-color);
+}
+
+.hero h1, p {
+    margin: 0;
+}
+
+.hero .strong {
+    margin: 5px 0 0 0;
+    font-family: var(--font-family-bold);
+    font-weight: 700;
+}
+
+
+/*** 3. WHAT WE DO SECTION ***/
+
+/* header and paragraph
+    ============================= */
+
+.wwd h1 {
+    text-align: center;
+    margin-top: 110px;
+}
+
+.wwd .paragraph {
+    text-align: center;
+    margin-top: 40px;
+    margin-left: calc(50% - 20em);
+    margin-bottom: 97px;
+    width: 40em;
+}
+
+/* icons and text
+    ============================= */
+
+.holberton_school-icon-ic_sound, .holberton_school-icon-ic_video,
+.holberton_school-icon-ic_music, .holberton_school-icon-ic_hearing {
+    color: var(--accent-red-color);
+    font-size: 95px;
+    animation-name: color-change-icon;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes color-change-icon {
+    from {
+	color: var(--accent-red-color);
+    }
+    to {
+	color: var(--dark-text-color);
+    }
+}
+
+.wwd .strong {
+    font-family: var(--font-family-bold);
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.wwd .icon-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.wwd .icon-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 32.5px;
+    margin-right: 32.5px;
+    margin-bottom: 90px;
+    width: 185px;
+    animation-name: color-change;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes color-change {
+    from {
+	color: var(--dark-text-color);
+    }
+    to {
+	color: var(--accent-red-color);
+    }
+}
+
+.wwd .icon-text .wrap {
+    font-size: 14px;
+    text-align: center;
+}
+
+
+/*** 4. OUR RESULTS SECTION ***/
+
+/* header and paragraph
+    ============================= */
+
+.results {
+    background-image: url("./images/headphones_hero_2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: var(--light-text-color);
+    text-align: center;
+}
+
+.results h1 {
+    margin: 0;
+    padding-top: 141px;
+}
+
+.results .para {
+    text-align: center;
+    margin-top: 40px;
+    margin-left: calc(50% - 20em);
+    width: 40em;
+}
+
+/* pentagons and text
+    ============================= */
+
+.results .penta-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px 0;
+}
+
+.results .penta-text {
+    background-color: var(--accent-red-color);
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    height: 190px;
+    width: 190px;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation-name: rotating;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotating {
+    from {
+	transform: rotate(0deg);
+    }
+    to {
+	transform: rotate(359deg);
+    }
+}
+
+.results .big {
+    font-family: var(--font-family-bold);
+    font-weight: 700;
+    font-size: 50px;
+    padding-top: 50px;
+    padding-bottom: 25px;
+}
+
+.results .small {
+    font-size: 14px;
+}
+
+
+/*** 5. CONTACT US SECTION ***/
+
+.contact {
+    text-align: center;
+    color: var(--dark-text-color);
+}
+
+.contact h1 {
+    margin-top: 110px;
+    margin-bottom: 56px;
+}
+
+.contact legend span {
+    display: none;
+}
+
+.contact fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.contact .contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 335px;
+    margin: 0 auto;
+}
+
+.contact .contact-form input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid lightgrey;
+    height: 40px;
+    width: 100%;
+    margin-bottom: 45px;
+    font-size: 14px;
+    font-family: var(--font-family-bold);
+    font-weight: 700;
+}
+
+.contact .contact-form input::placeholder {
+    color: var(--dark-text-color);
+}
+
+.contact .form-button {
+    padding: calc(22px - 8px) 0;
+    margin-top: 11px;
+    margin-bottom: 130px;
+    filter: none;
+}
+
+
+/*** 6. FOOTER ***/
+
+footer {
+    background: var(--dark-text-color);
+    color: var(--light-text-color);
+}
+
+footer .footer-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 92px;
+    margin-bottom: 71px;
+}
+
+footer .social-icons {
+    display: flex;
+    width: 130px;
+    height: 30px;
+    justify-content: space-between;
+}
+
+footer .holberton_school-icon-ic_facebook,
+footer .holberton_school-icon-ic_twitter,
+footer .holberton_school-icon-ic_instagram {
+    font-size: 30px;
+}
+
+footer p {
+    font-size: 12px;
+    padding-bottom: 35px;
+    text-align: center;
+}
+
+
+/*** 7. RESPONSIVE DESIGN ***/
+
+@media (max-width: 375px) {
+
+    footer .footer-links {
+	width: 162px;
+	margin: 0 auto;
+	padding-top: 48px;
+    }
+
+    footer .social-icons {
+	margin: 45px 0;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 999px) {
+
+/* icons and text
+    ============================= */
+
+    .wwd .icon-row {
+	width: calc(2 * 250px);
+	margin-left: auto;
+	margin-right: auto;
+    }
+
+/* pentagons and text
+    ============================= */
+
+    .results .penta-row {
+	width: calc(2 * 250px);
+	margin-left: auto;
+	margin-right: auto;
+    }
+}
+
+@media (max-width: 767px) {
+
+/* background image
+    ============================= */
+
+    .page-top {
+	height: auto;
+	background-position: 40% 50%;
+    }
+
+/* nav bar
+    ============================= */
+
+    header .menu-open-button {
+	display: flex;
+    }
+
+    .nav-bar {
+	align-items: normal;
+	justify-content: normal;
+	display: flex;
+	flex-wrap: wrap;
+    }
+
+    .nav-bar .logo {
+	flex-basis: calc(100% - 41.5px);
+	text-align: center;
+    }
+
+    .nav-bar .logo img {
+	position: relative;
+	left: -20.5px;
+    }
+
+    .nav-bar ul {
+	flex-direction: column;
+	margin: 0;
+	align-items: center;
+    }
+
+    .nav-bar li {
+	margin-top: 20px;
+    }
+
+    header nav {
+	flex-basis: 100%;
+	overflow: hidden;
+	max-height: 0;
+	transition: max-height .2s ease-out;
+    }
+
+    .menu-open:checked ~ nav {
+	 max-height: 100%;
+    }
+
+/* hero layout
+    ============================= */
+
+    .hero {
+        width: 90%;
+	margin: 0 5%;
+	padding-top: 250px;
+	padding-bottom: 50px;
+    }
+
+    .hero .strong {
+	padding: 0 10%;
+    }
+
+/* wwd paragraph
+    ============================= */
+
+    .wwd .paragraph {
+	width: 90%;
+	margin: 0 5%;
+	padding-top: 40px;
+	padding-bottom: 110px;
+    }
+
+/* results paragraph
+    ============================= */
+
+    .results .para {
+	width: 90%;
+	margin: 0 5%;
+	padding-top: 40px;
+    }
+}
